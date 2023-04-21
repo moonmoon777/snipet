@@ -269,3 +269,26 @@ aamoreaaano**more**aaa
 
 例
 aa**more**aaanomoreaaa
+
+## 小技
+
+```py
+# ファイルの文字コードをutf-8からshift-jisに変換する
+# 使い方: python3 utf8_to_sjis.py <変換したいファイル名>
+# 例: python3 utf8_to_sjis.py test.txt
+import sys
+import codecs
+
+def main():
+    if len(sys.argv) < 2:
+        print("usage: python3 utf8_to_sjis.py <filename>")
+        sys.exit(1)
+    filename = sys.argv[1]
+    with codecs.open(filename, "r", "utf-8") as f:
+        text = f.read()
+    with codecs.open(filename, "w", "shift-jis") as f:
+        f.write(text)
+
+if __name__ == "__main__":
+    main()
+```
