@@ -292,3 +292,9 @@ def main():
 if __name__ == "__main__":
     main()
 ```
+
+### DB2 for i カタログ類
+
+以下サイトにカタログテーブルが載っている。  
+
+[IBM i のカタログ表およびビュー](https://www.ibm.com/docs/ja/i/7.3?topic=views-i-catalog-tables)  
