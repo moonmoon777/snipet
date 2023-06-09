@@ -298,3 +298,17 @@ if __name__ == "__main__":
 以下サイトにカタログテーブルが載っている。  
 
 [IBM i のカタログ表およびビュー](https://www.ibm.com/docs/ja/i/7.3?topic=views-i-catalog-tables)  
+
+
+### iconvの使い方  
+
+基本的な使い方  
+
+```sh
+iconv -f 変換前文字コード -t 変換後文字コード 入力ファイル -o 出力ファイル名
+```
+
+変換リストの確認
+```sh
+iconv -l
+```
