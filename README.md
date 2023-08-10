@@ -317,3 +317,58 @@ iconv -l
 ```sh
 iconv -c -f 変換前文字コード -t 変換後文字コード 入力ファイル -o 出力ファイル名
 ```
+
+## CSS
+
+### before,after
+
+before,afterの疑似要素を使えばCSSで文字を表示させることが可能。
+contentプロパティをつかう。
+
+```css
+body::before {
+content:"hello";
+}
+```
+
+### mix-blend-mode
+
+photoshopでいう覆い焼きとかオーバーレイとかが出来る。  
+上手く組み合わせると色調反転をCSSだけで出来たりする。
+
+#### CSSだけで色調反転させる
+
+```css
+body{
+	color: #000000;
+	margin: 0;
+	padding: 0;
+	background-color: #1d1a39;
+
+	filter: invert(100%);
+	mix-blend-mode: exclusion;
+}
+```
+
+### linear-gradient
+
+グラデーションの色や角度などが細かく指定できる関数。
+背景に斜めの線をいれたりとかできる。
+
+#### CSSだけで背景に青い45度の斜めストライプを表示する
+
+疑似要素を使うのがポイント。
+contentは空っぽで指定しておかないと表示されない。
+
+```css
+  body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(-45deg, rgb(0 0 255 / 0.15) 25%, transparent 25%, transparent 50%, rgba(0, 0, 255, 0.15) 50%, rgba(0, 0, 255, 0.15) 75%, transparent 75%); /* 45度の青と透明のストライプを設定 */
+    background-size: 200px 200px; /* ストライプの間隔を調整 */
+  }
+```
